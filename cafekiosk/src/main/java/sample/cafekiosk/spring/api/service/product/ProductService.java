@@ -19,6 +19,7 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
+    @Transactional
     public ProductResponse createProduct(ProductCreateRequest request) {
         String nextProductNumber = createNextProductNumber();
 
