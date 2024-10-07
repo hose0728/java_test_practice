@@ -44,7 +44,7 @@ class ProductServiceTest {
                 .price(5000)
                 .build();
         // when
-        ProductResponse productResponse = productService.createProduct(request);
+        ProductResponse productResponse = productService.createProduct(request.toServiceRequest());
         // then
         assertThat(productResponse)
                 .extracting("productNumber", "type", "sellingStatus", "name", "price")
@@ -70,7 +70,7 @@ class ProductServiceTest {
                 .price(5000)
                 .build();
         // when
-        ProductResponse productResponse = productService.createProduct(request);
+        ProductResponse productResponse = productService.createProduct(request.toServiceRequest());
         // then
         assertThat(productResponse)
                 .extracting("productNumber", "type", "sellingStatus", "name", "price")
